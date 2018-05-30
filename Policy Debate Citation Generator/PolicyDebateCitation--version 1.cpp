@@ -3,10 +3,13 @@
 
 using namespace std;
 
+
 int menu() {
   int choice = 0;
   cout << endl << "Welcome to Amogh's policy debate citation creator v1 -- please select an option from the list below: ";
   cout << endl;
+  cout << "----------------------------------------------------------------------------------------------------" << endl;
+  
   cout 
     << "1. New Citation" << endl
     << "2. Quit" << endl;
@@ -81,25 +84,28 @@ int main() {
 
   int choice = menu();
   
-  string authorFullName;
-  string firstName;
-  string lastName;
+  string authorFullName = "";
+  string firstName = "";
+  string lastName = "";
   
-  string fullDate;
-  string month;
-  string day;
-  string year;
+  string fullDate = "";
+  string month = "";
+  string day = "";
+  string year = "";
   
-  string articleTitle;
-  string journalInfo;
-  string authorInfo;
-  string sourceLink;
-  string userName;
+  string articleTitle = "";
+  string journalInfo = "";
+  string authorInfo = "";
+  string sourceLink = "";
+  string userName = "";
+  string include = "";
+
 
   while (choice != 2) {
       
     if (choice == 1) {
-    
+        
+        cout << endl;
         cout << "Enter the first and last name of the author. If the author is unknown, type none." << endl;
         getline(cin, authorFullName);
         
@@ -140,7 +146,6 @@ int main() {
         
         cout << endl;
         
-        
         cout << "Enter title of article/book." << endl;
         getline(cin, articleTitle);
         
@@ -153,7 +158,6 @@ int main() {
             journalInfo = "";
         }  
         
-        
         cout << endl;
         
         cout << "Paste the link for the source. If source is not online, type none." << endl;
@@ -163,14 +167,13 @@ int main() {
             sourceLink = "";
         }  
         
-        
         cout << endl;
         
-        string include;
         cout << "Would you like to include credits (initials/name) for cutting the card? Enter Y or N." << endl;
         getline(cin, include);
         
         if (include == "Yes" || include == "Y" || include == "yes"){
+            cout << endl;
             cout << "Enter the name/initials that you would like included in the citation." << endl;
             getline(cin, userName);
         }
@@ -178,7 +181,7 @@ int main() {
         else {
             userName = "";
         }
-      
+        
         cout << endl;
         cout << "Citation generated: " << endl;
         cout << endl;
@@ -191,7 +194,6 @@ int main() {
     choice = menu();
     
   }
-  
   
   return 0;
 }
